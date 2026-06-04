@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Lailani Zhulmi — Growth & Performance Marketing Strategist blending creative direction, analytics, campaign activation, and brand storytelling." />
+  <title>Lailani Zhulmi — Growth & Performance Marketing Strategist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..800,0..100,0..1&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --canvas: #f5eee4;
+      --ink: #15120f;
+      --muted: #6f655c;
+      --clay: #ad6d5d;
+      --blood: #650001;
+      --forest: #0b2d09;
+      --moss: #5e6d5f;
+      --mahogany: #4a1c11;
+      --paper: rgba(255, 249, 239, .72);
+      --line: rgba(21,18,15,.16);
+      --shadow: 0 18px 60px rgba(55, 27, 12, .12);
+      --radius: 28px;
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 88% 12%, rgba(173, 109, 93, .22), transparent 28rem),
+        radial-gradient(circle at 10% 35%, rgba(11,45,9,.10), transparent 32rem),
+        linear-gradient(90deg, rgba(21,18,15,.035) 1px, transparent 1px),
+        linear-gradient(rgba(21,18,15,.035) 1px, transparent 1px),
+        var(--canvas);
+      background-size: auto, auto, 36px 36px, 36px 36px, auto;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea { font: inherit; }
+    ::selection { background: var(--blood); color: var(--canvas); }
+
+    .shell { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .mini { text-transform: uppercase; letter-spacing: .16em; font-size: .72rem; font-weight: 800; color: var(--blood); }
+    .serif { font-family: var(--serif); }
+    .section-pad { padding: 96px 0; }
+
+    .skip-link {
+      position: fixed; left: 16px; top: 12px; z-index: 999; transform: translateY(-150%);
+      background: var(--ink); color: var(--canvas); padding: 10px 14px; border-radius: 999px;
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(245, 238, 228, .72);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      width: min(var(--max), calc(100% - 40px)); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      min-height: 76px;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: 12px; font-weight: 900; letter-spacing: -.03em;
+    }
+    .brand-mark {
+      width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+      background: var(--ink); color: var(--canvas); font-family: var(--serif); font-weight: 800;
+      box-shadow: 8px 8px 0 var(--clay);
+    }
+    .nav-links { display: flex; align-items: center; gap: 6px; }
+    .nav-links a, .nav-links button {
+      border: 1px solid transparent; background: transparent; border-radius: 999px;
+      padding: 11px 15px; font-size: .86rem; font-weight: 800; cursor: pointer;
+      text-transform: uppercase; letter-spacing: .07em;
+    }
+    .nav-links a:hover, .nav-links button:hover { border-color: var(--ink); transform: translateY(-1px); }
+    .nav-cta { background: var(--blood) !important; color: var(--canvas) !important; }
+    .menu-toggle { display: none; background: var(--ink); color: var(--canvas); border: 0; border-radius: 999px; padding: 10px 13px; font-weight: 900; cursor: pointer; }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid; align-items: stretch;
+      grid-template-columns: 1.02fr .98fr;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-copy {
+      padding: 68px clamp(24px, 6vw, 86px) 62px clamp(24px, 8vw, 112px);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .hero-kicker { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 22px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 8px; min-height: 34px;
+      border: 1px solid var(--ink); border-radius: 999px; padding: 8px 12px;
+      font-size: .72rem; font-weight: 900; text-transform: uppercase; letter-spacing: .1em;
+      background: rgba(255, 249, 239, .58);
+    }
+    .pill::before { content: ""; width: 8px; height: 8px; border-radius: 99px; background: var(--blood); }
+    h1 {
+      margin: 0; font-family: var(--serif); font-size: clamp(4rem, 11vw, 9.2rem);
+      line-height: .84; letter-spacing: -.075em; font-weight: 700;
+    }
+    .hero-subtitle { margin: 26px 0 0; font-size: clamp(1.05rem, 2vw, 1.45rem); line-height: 1.5; max-width: 720px; color: #2b2621; }
+    .hero-subtitle strong { color: var(--blood); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      border: 1.4px solid var(--ink); border-radius: 999px; min-height: 48px; padding: 0 20px;
+      font-weight: 900; letter-spacing: .02em; cursor: pointer; transition: .18s ease;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 7px 7px 0 rgba(21,18,15,.18); }
+    .btn.primary { background: var(--blood); color: var(--canvas); border-color: var(--blood); }
+    .btn.dark { background: var(--ink); color: var(--canvas); }
+    .btn.ghost { background: transparent; }
+    .hero-stats {
+      display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; margin-top: 46px;
+    }
+    .stat {
+      border-top: 2px solid var(--ink); padding-top: 14px; min-height: 94px;
+    }
+    .stat b { display: block; font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.7rem); line-height: .9; letter-spacing: -.05em; color: var(--blood); }
+    .stat span { display: block; margin-top: 8px; font-size: .78rem; line-height: 1.25; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; }
+    .hero-visual {
+      min-height: 760px; position: relative; overflow: hidden; background: #d2ccc2;
+      border-left: 1px solid var(--line);
+    }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: contrast(1.02) saturate(.96); }
+    .hero-card {
+      position: absolute; right: 28px; bottom: 26px; width: min(430px, calc(100% - 56px));
+      border-radius: var(--radius); padding: 22px; background: rgba(245, 238, 228, .84);
+      backdrop-filter: blur(14px); border: 1px solid rgba(21,18,15,.2); box-shadow: var(--shadow);
+    }
+    .hero-card p { margin: 8px 0 0; color: #2d2722; line-height: 1.5; }
+
+    .marquee { overflow: hidden; background: var(--blood); color: var(--canvas); border-bottom: 1px solid var(--blood); }
+    .marquee-track { display: flex; width: max-content; animation: marquee 26s linear infinite; }
+    .marquee a { display: inline-flex; align-items: center; gap: 16px; padding: 16px 20px; font-weight: 900; text-transform: uppercase; letter-spacing: .12em; white-space: nowrap; }
+    .marquee a::after { content: "✦"; color: var(--clay); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .about-band { background: var(--blood); color: var(--canvas); }
+    .about-grid { display: grid; grid-template-columns: .92fr 1.08fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+    .about-title h2, .section-title h2 { font-family: var(--serif); font-size: clamp(3rem, 7vw, 6.4rem); line-height: .9; letter-spacing: -.065em; margin: 10px 0 0; }
+    .about-copy p { font-size: clamp(1rem, 1.35vw, 1.18rem); line-height: 1.75; color: rgba(245,238,228,.88); margin: 0 0 20px; }
+    .timeline { margin-top: 32px; display: grid; gap: 12px; }
+    .time-card { display: grid; grid-template-columns: 110px 1fr; gap: 18px; border-top: 1px solid rgba(245,238,228,.2); padding-top: 18px; }
+    .time-card .year { font-weight: 900; color: var(--clay); }
+    .time-card h3 { margin: 0; font-size: 1.02rem; }
+    .time-card p { margin: 6px 0 0; font-size: .92rem; line-height: 1.55; color: rgba(245,238,228,.72); }
+
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 34px; }
+    .section-title h2 { color: var(--ink); }
+    .section-intro { max-width: 520px; color: var(--muted); line-height: 1.65; }
+    .work-tools { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 34px; }
+    .chip {
+      border: 1px solid var(--line); border-radius: 999px; padding: 10px 14px; cursor: pointer; background: rgba(255,249,239,.5); font-weight: 900;
+    }
+    .chip.active, .chip:hover { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+    .work-grid { display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 18px; }
+    .work-card {
+      grid-column: span 6; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden;
+      background: rgba(255,249,239,.62); box-shadow: var(--shadow); cursor: pointer; min-height: 520px;
+      display: flex; flex-direction: column; transition: .2s ease;
+    }
+    .work-card:hover { transform: translateY(-6px); box-shadow: 14px 22px 0 rgba(101,0,1,.10); }
+    .work-card.wide { grid-column: span 12; display: grid; grid-template-columns: .9fr 1.1fr; min-height: 520px; }
+    .work-media { height: 270px; overflow: hidden; background: var(--moss); }
+    .wide .work-media { height: 100%; }
+    .work-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .work-card:hover .work-media img { transform: scale(1.04); }
+    .work-content { padding: 26px; display: flex; flex-direction: column; gap: 20px; flex: 1; }
+    .work-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; padding: 7px 10px; font-size: .72rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; color: var(--blood); background: rgba(245,238,228,.65); }
+    .work-card h3 { font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 4rem); line-height: .9; letter-spacing: -.055em; margin: 0; }
+    .work-card p { margin: 0; line-height: 1.62; color: #4e453d; }
+    .impact-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: auto; }
+    .impact { border-top: 1px solid var(--line); padding-top: 12px; }
+    .impact b { display: block; font-size: 1.35rem; color: var(--blood); font-family: var(--serif); line-height: .9; }
+    .impact span { display: block; font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 800; color: var(--muted); margin-top: 6px; }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .services { background: var(--forest); color: var(--canvas); }
+    .services .section-intro { color: rgba(245,238,228,.78); }
+    .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); border-top: 1px solid rgba(245,238,228,.17); }
+    .service-item {
+      border-bottom: 1px solid rgba(245,238,228,.17); padding: 26px 0; margin-right: 34px; cursor: pointer;
+    }
+    .service-line { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: start; }
+    .service-no { color: var(--clay); font-weight: 900; font-family: var(--serif); font-size: 1.4rem; }
+    .service-item h3 { margin: 0; font-size: clamp(1.2rem, 2vw, 1.8rem); letter-spacing: -.035em; }
+    .service-more { font-weight: 900; transition: .2s; }
+    .service-desc { max-height: 0; overflow: hidden; transition: max-height .25s ease; color: rgba(245,238,228,.72); line-height: 1.6; padding-left: 54px; }
+    .service-item.open .service-desc { max-height: 180px; margin-top: 12px; }
+    .service-item.open .service-more { transform: rotate(45deg); color: var(--clay); }
+
+    .proof-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; align-items: stretch; }
+    .quote-box {
+      background: var(--ink); color: var(--canvas); border-radius: var(--radius); padding: clamp(26px,4vw,46px); min-height: 470px;
+      display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--shadow);
+    }
+    .quote-box h2 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 5.8rem); line-height: .9; letter-spacing: -.06em; margin: 0; }
+    .quote-box p { color: rgba(245,238,228,.75); line-height: 1.7; }
+    .proof-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
+    .proof-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; background: rgba(255,249,239,.65); display: flex; flex-direction: column; justify-content: space-between; min-height: 230px; cursor: pointer; transition: .18s; }
+    .proof-card:hover { background: var(--clay); color: var(--canvas); transform: translateY(-4px); }
+    .proof-card h3 { margin: 0; font-family: var(--serif); font-size: 1.55rem; letter-spacing: -.04em; }
+    .proof-card p { color: inherit; opacity: .78; line-height: 1.55; }
+
+    .visual-lab { background: var(--mahogany); color: var(--canvas); }
+    .visual-grid { display: grid; grid-template-columns: repeat(12, minmax(0,1fr)); gap: 18px; }
+    .visual-card { border: 1px solid rgba(245,238,228,.16); border-radius: var(--radius); overflow: hidden; background: rgba(255,255,255,.05); min-height: 240px; }
+    .visual-card.large { grid-column: span 7; }
+    .visual-card.side { grid-column: span 5; }
+    .visual-card.small { grid-column: span 4; }
+    .visual-card img { height: 100%; width: 100%; object-fit: cover; }
+    .visual-caption { padding: 18px; }
+    .visual-caption h3 { margin: 0; font-family: var(--serif); font-size: 1.6rem; letter-spacing: -.04em; }
+    .visual-caption p { margin: 8px 0 0; color: rgba(245,238,228,.7); line-height: 1.55; }
+
+    .presence { background: var(--canvas); }
+    .link-board { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+    .link-card { border: 1px solid var(--line); border-radius: 22px; padding: 20px; background: rgba(255,249,239,.6); min-height: 150px; display:flex; flex-direction: column; justify-content: space-between; transition:.18s; }
+    .link-card:hover { transform: translateY(-4px); background: var(--ink); color: var(--canvas); box-shadow: 8px 8px 0 rgba(101,0,1,.18); }
+    .link-card span { color: inherit; opacity: .7; font-size: .8rem; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
+    .link-card b { font-family: var(--serif); font-size: 1.35rem; letter-spacing: -.04em; }
+
+    .contact { background: var(--mahogany); color: var(--canvas); }
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 36px; align-items: start; }
+    .contact h2 { font-family: var(--serif); font-size: clamp(3rem, 6vw, 6rem); line-height: .88; letter-spacing: -.06em; margin: 12px 0 22px; }
+    .contact-list { display: grid; gap: 14px; margin-top: 32px; }
+    .contact-row { display:flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid rgba(245,238,228,.18); padding-bottom: 14px; color: rgba(245,238,228,.84); }
+    .contact-row b { color: var(--canvas); }
+    .form-card { background: rgba(255,255,255,.055); border: 1px solid rgba(245,238,228,.14); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+    .field { display: grid; gap: 8px; margin-bottom: 14px; }
+    .field label { font-weight: 900; font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: rgba(245,238,228,.78); }
+    .field input, .field textarea, .field select {
+      width: 100%; border: 1px solid rgba(245,238,228,.16); border-radius: 16px; background: rgba(255,255,255,.055);
+      color: var(--canvas); padding: 14px 15px; outline: none;
+    }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--clay); box-shadow: 0 0 0 4px rgba(173,109,93,.18); }
+    .field textarea { min-height: 130px; resize: vertical; }
+    .form-actions { display:flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+    .contact .btn.primary { background: var(--clay); border-color: var(--clay); color: var(--canvas); }
+    .contact .btn.ghost { color: var(--canvas); border-color: rgba(245,238,228,.35); }
+
+    footer { background: var(--forest); color: rgba(245,238,228,.8); padding: 28px 0; }
+    .foot { display:flex; justify-content: space-between; align-items:center; gap: 18px; font-size: .86rem; }
+    .foot-links { display:flex; flex-wrap:wrap; gap: 14px; font-weight: 800; }
+
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(16, 10, 7, .64); backdrop-filter: blur(10px); z-index: 500;
+      opacity: 0; pointer-events: none; transition: .2s ease; padding: 22px; display: grid; place-items: center;
+    }
+    .modal-backdrop.show { opacity: 1; pointer-events: auto; }
+    .modal {
+      width: min(960px, 100%); max-height: min(760px, 90vh); overflow: auto; background: var(--canvas); color: var(--ink);
+      border-radius: 32px; box-shadow: 0 40px 90px rgba(0,0,0,.36); border: 1px solid rgba(255,255,255,.22);
+    }
+    .modal-hero { min-height: 240px; position: relative; overflow: hidden; }
+    .modal-hero img { width:100%; height: 320px; object-fit: cover; }
+    .modal-body { padding: clamp(24px,4vw,44px); }
+    .modal-top { display:flex; justify-content: space-between; gap: 20px; align-items: start; }
+    .modal h2 { margin: 0; font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 5rem); line-height: .9; letter-spacing: -.06em; }
+    .close-modal { border: 1px solid var(--ink); background: transparent; color: var(--ink); border-radius: 999px; width: 42px; height: 42px; cursor:pointer; font-weight: 900; }
+    .modal-grid { display:grid; grid-template-columns: .65fr 1.35fr; gap: 22px; margin-top: 26px; }
+    .modal-list { display:grid; gap: 12px; }
+    .modal-list div { border-top: 1px solid var(--line); padding-top: 12px; }
+    .modal-list b { display:block; font-size: .75rem; letter-spacing:.1em; text-transform:uppercase; color: var(--blood); }
+    .modal-list span { display:block; margin-top: 6px; color: #4e453d; line-height:1.5; }
+    .modal-copy p { line-height: 1.7; color: #3f3832; }
+    .modal-copy ul { padding-left: 20px; line-height: 1.7; }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 54px 24px; }
+      .hero-visual { min-height: 650px; border-left: 0; border-top: 1px solid var(--line); }
+      .hero-stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .about-grid, .proof-grid, .contact-grid { grid-template-columns: 1fr; }
+      .work-card, .work-card.wide { grid-column: span 12; display: flex; min-height: auto; }
+      .wide .work-media { height: 320px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-item { margin-right: 0; }
+      .link-board { grid-template-columns: repeat(2,1fr); }
+    }
+
+    @media (max-width: 760px) {
+      .shell, .nav { width: min(100% - 28px, var(--max)); }
+      .section-pad { padding: 72px 0; }
+      .menu-toggle { display: inline-flex; }
+      .nav-links {
+        position: fixed; top: 76px; right: 14px; left: 14px; z-index: 101;
+        background: rgba(245,238,228,.96); border: 1px solid var(--line); border-radius: 24px;
+        padding: 14px; flex-direction: column; align-items: stretch; box-shadow: var(--shadow);
+        opacity: 0; pointer-events: none; transform: translateY(-10px); transition: .18s;
+      }
+      .nav-links.open { opacity: 1; pointer-events: auto; transform: translateY(0); }
+      .nav-links a, .nav-links button { text-align: left; width: 100%; }
+      h1 { font-size: clamp(4.6rem, 22vw, 7rem); }
+      .hero-subtitle { font-size: 1.02rem; }
+      .hero-actions .btn { width: 100%; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero-visual { min-height: 540px; }
+      .hero-card { left: 16px; right: 16px; bottom: 16px; width: auto; }
+      .section-head { display: block; }
+      .about-title h2, .section-title h2, .contact h2 { font-size: clamp(3.2rem, 17vw, 5rem); }
+      .time-card { grid-template-columns: 1fr; gap: 6px; }
+      .work-media, .wide .work-media { height: 250px; }
+      .impact-row { grid-template-columns: 1fr; }
+      .proof-cards, .link-board { grid-template-columns: 1fr; }
+      .visual-card.large, .visual-card.side, .visual-card.small { grid-column: span 12; }
+      .contact-row { display: grid; }
+      .foot { flex-direction: column; align-items: flex-start; }
+      .modal-grid { grid-template-columns: 1fr; }
+      .modal-hero img { height: 250px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Back to top">
+        <span class="brand-mark">LZ</span><span>Lailani Zhulmi</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">Menu</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#proof">Proof</a>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home" aria-label="Hero section">
+      <div class="hero-copy reveal">
+        <div class="hero-kicker">
+          <span class="pill">Growth & Performance Marketing Strategist</span>
+          <span class="pill">Design-trained · Data-backed</span>
+        </div>
+        <h1>Lailani<br>Zhulmi</h1>
+        <p class="hero-subtitle">I turn attention into action — and campaigns into measurable growth. Built for brands that want to <strong>connect, convert, and scale</strong>.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#work">View Portfolio</a>
+          <a class="btn ghost" href="#contact">Contact Me</a>
+          <a class="btn dark" href="assets/Lailani_Zhulmi_CV_2026.pdf" download>Download CV</a>
+        </div>
+        <div class="hero-stats" aria-label="Key portfolio metrics">
+          <div class="stat"><b>7+</b><span>Years in growth marketing</span></div>
+          <div class="stat"><b>96K+</b><span>App installs generated</span></div>
+          <div class="stat"><b>1.7M+</b><span>Paid media clicks driven</span></div>
+          <div class="stat"><b>180+</b><span>Media collaborations</span></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal">
+        <img src="assets/hero_lailani.webp" alt="Portrait of Lailani Zhulmi seated on a stool" />
+        <div class="hero-card">
+          <span class="mini">Current focus</span>
+          <p><strong>Fintech marketing, performance analytics, brand activation, CRM, social ecosystem, visual direction, voice & stage.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Portfolio keywords">
+      <div class="marquee-track">
+        <a href="#work">Growth Marketing</a><a href="#work">Performance Analytics</a><a href="#work">Brand Activation</a><a href="#services">Social Ecosystem</a><a href="#services">Voice & Stage</a><a href="#work">Visual Direction</a><a href="#services">CRM</a><a href="#work">Full-Funnel Campaigns</a>
+        <a href="#work">Growth Marketing</a><a href="#work">Performance Analytics</a><a href="#work">Brand Activation</a><a href="#services">Social Ecosystem</a><a href="#services">Voice & Stage</a><a href="#work">Visual Direction</a><a href="#services">CRM</a><a href="#work">Full-Funnel Campaigns</a>
+      </div>
+    </section>
+
+    <section class="about-band section-pad" id="about">
+      <div class="shell about-grid">
+        <div class="about-title reveal">
+          <span class="mini">About</span>
+          <h2>Creative mind.<br>Commercial instinct.</h2>
+        </div>
+        <div class="about-copy reveal">
+          <p>Hi, I’m Lala — a marketer who turns creative ideas into measurable growth. I build campaigns that don’t just look good. They sell, scale, convert, and move people to act.</p>
+          <p>With 7+ years across fintech, banking, events, and creative business, I work at the intersection of brand storytelling, growth strategy, media performance, CRM, social ecosystems, and audience psychology.</p>
+          <p>My edge comes from blending a visual communication background with a business-minded marketing approach: every idea has a purpose, every channel has a role, and every campaign is built to create impact.</p>
+
+          <div class="timeline" aria-label="Career timeline">
+            <article class="time-card"><div class="year">2023—Now</div><div><h3>Fintech Marketing Manager · Bank Sahabat Sampoerna</h3><p>Own full-funnel strategy for Sampoerna Mobile Banking and growth-led campaigns across digital, partnership, and offline channels.</p></div></article>
+            <article class="time-card"><div class="year">2021—2023</div><div><h3>Digital Marketing Specialist · Bank Sahabat Sampoerna</h3><p>Led rebranding, relaunch communication, performance campaigns, CRM, and digital reporting for Sampoerna Mobile Banking.</p></div></article>
+            <article class="time-card"><div class="year">2018—2021</div><div><h3>Creative Designer · Banking & Financial Services</h3><p>Built campaign visuals and brand assets that shaped the bridge from creative execution into measurable marketing strategy.</p></div></article>
+            <article class="time-card"><div class="year">Parallel</div><div><h3>Founder · Voice Talent · MC</h3><p>Run creative business projects, 3D visualization work, voice over, and live hosting — proof that communication can live on screen, stage, and space.</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="work">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-title">
+            <span class="mini">Selected Work</span>
+            <h2>How I build growth</h2>
+          </div>
+          <p class="section-intro">A portfolio of campaigns, social ecosystems, digital products, creative business work, and communication formats that connect strategy with measurable outcomes.</p>
+        </div>
+
+        <div class="work-tools reveal" role="group" aria-label="Filter projects">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="growth">Growth</button>
+          <button class="chip" data-filter="festival">Festival</button>
+          <button class="chip" data-filter="social">Social</button>
+          <button class="chip" data-filter="creative">Creative Business</button>
+          <button class="chip" data-filter="voice">Voice & Stage</button>
+        </div>
+
+        <div class="work-grid" id="workGrid">
+          <article class="work-card wide reveal" data-category="growth" data-project="smb">
+            <div class="work-media"><img src="assets/event_microphone.webp" alt="Lailani at a Sampoerna Mobile Banking event" /></div>
+            <div class="work-content">
+              <div class="work-meta"><span class="tag">2021—Present</span><span class="tag">Digital Banking</span><span class="tag">Performance</span></div>
+              <h3>Sampoerna Mobile Banking</h3>
+              <p>Building trust for a digital banking brand through product storytelling, acquisition campaigns, CRM communication, paid media, and multi-channel activation.</p>
+              <div class="impact-row"><div class="impact"><b>96K+</b><span>App installs in 2025</span></div><div class="impact"><b>Rp3,099</b><span>Efficient CPI</span></div><div class="impact"><b>19M+</b><span>Paid impressions</span></div></div>
+              <div class="card-actions"><button class="btn ghost" data-open="smb">Open case study</button><a class="btn dark" href="https://sampoernamobile.banksampoerna.com/" target="_blank" rel="noopener">Visit site</a></div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="festival" data-project="fest">
+            <div class="work-media"><img src="assets/festival_stage.webp" alt="Lailani hosting a SampoernaFest related event" /></div>
+            <div class="work-content">
+              <div class="work-meta"><span class="tag">2023—Present</span><span class="tag">Festival</span></div>
+              <h3>SampoernaFest</h3>
+              <p>Scaling a reward campaign into a multi-city brand festival with ticketing communication, social amplification, media partners, and digital activation.</p>
+              <div class="impact-row"><div class="impact"><b>7</b><span>Cities</span></div><div class="impact"><b>70%</b><span>Ticket sales via digital</span></div><div class="impact"><b>19.5M</b><span>Content views</span></div></div>
+              <div class="card-actions"><button class="btn ghost" data-open="fest">Open case study</button><a class="btn dark" href="https://sampoernafest.com/" target="_blank" rel="noopener">Visit site</a></div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="social" data-project="social">
+            <div class="work-media"><img src="assets/corporate_room.webp" alt="Corporate presentation and marketing session" /></div>
+            <div class="work-content">
+              <div class="work-meta"><span class="tag">2021—Present</span><span class="tag">Social Ecosystem</span></div>
+              <h3>Human banking content</h3>
+              <p>Making financial content feel simpler, more interactive, and more trustworthy through social media strategy, quizzes, testimonials, collaborations, and content pillars.</p>
+              <div class="impact-row"><div class="impact"><b>56K+</b><span>Instagram followers</span></div><div class="impact"><b>200K</b><span>Clicks/month</span></div><div class="impact"><b>50K</b><span>Page views/month</span></div></div>
+              <div class="card-actions"><button class="btn ghost" data-open="social">Open case study</button><a class="btn dark" href="https://www.instagram.com/sampoerna.mobilebanking/" target="_blank" rel="noopener">Open Instagram</a></div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="creative" data-project="dara">
+            <div class="work-media"><img src="assets/kitchen_render.webp" alt="Modern kitchen render from Dara Kitchen Set" /></div>
+            <div class="work-content">
+              <div class="work-meta"><span class="tag">2020—Present</span><span class="tag">Founder</span></div>
+              <h3>Dara Kitchen Set</h3>
+              <p>Translating client briefs, measurements, lifestyle needs, and production constraints into realistic 3D concepts and finished custom furniture projects.</p>
+              <div class="impact-row"><div class="impact"><b>3—5</b><span>Buyers/month</span></div><div class="impact"><b>95%+</b><span>Customer satisfaction</span></div><div class="impact"><b>3D</b><span>Visualization lead</span></div></div>
+              <div class="card-actions"><button class="btn ghost" data-open="dara">Open case study</button><a class="btn dark" href="https://www.instagram.com/dara.kitchenset/" target="_blank" rel="noopener">Open Instagram</a></div>
+            </div>
+          </article>
+
+          <article class="work-card reveal" data-category="voice" data-project="voice">
+            <div class="work-media"><img src="assets/event_stage.webp" alt="Lailani speaking on stage" /></div>
+            <div class="work-content">
+              <div class="work-meta"><span class="tag">2018—Present</span><span class="tag">MC & Voice Over</span></div>
+              <h3>Voice, presence & live storytelling</h3>
+              <p>Hosting corporate events, product launches, livestreams, lucky draws, and delivering voice-over work for brand and campaign assets.</p>
+              <div class="impact-row"><div class="impact"><b>Multi</b><span>Format portfolio</span></div><div class="impact"><b>Live</b><span>Events & streaming</span></div><div class="impact"><b>VO</b><span>Brand narration</span></div></div>
+              <div class="card-actions"><button class="btn ghost" data-open="voice">Open case study</button><a class="btn dark" href="https://www.instagram.com/lailanizhulmi/" target="_blank" rel="noopener">Open Instagram</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="services">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-title"><span class="mini">What I can do for your brand</span><h2>Services with bite.</h2></div>
+          <p class="section-intro">Click each line to expand. The sweet spot: marketing strategy that respects both creative taste and business numbers.</p>
+        </div>
+        <div class="service-grid reveal">
+          <article class="service-item open"><div class="service-line"><span class="service-no">01</span><h3>Growth & Performance Strategy</h3><span class="service-more">+</span></div><p class="service-desc">Full-funnel acquisition strategy, paid media structure, conversion optimization, KPI framework, CAC/CPI/ROI analysis, and growth experiments.</p></article>
+          <article class="service-item"><div class="service-line"><span class="service-no">02</span><h3>Brand Campaign Architecture</h3><span class="service-more">+</span></div><p class="service-desc">Campaign concepting, product positioning, go-to-market messaging, launch communication, visual direction, and integrated activation planning.</p></article>
+          <article class="service-item"><div class="service-line"><span class="service-no">03</span><h3>CRM & Social Ecosystem</h3><span class="service-more">+</span></div><p class="service-desc">Content pillars, social mechanics, community engagement, email/push/WhatsApp journeys, retention communication, and always-on storytelling.</p></article>
+          <article class="service-item"><div class="service-line"><span class="service-no">04</span><h3>Event, Partnership & KOL Activation</h3><span class="service-more">+</span></div><p class="service-desc">On-ground and digital activation, media partner coordination, KOL amplification, ticketing communication, and performance reporting.</p></article>
+          <article class="service-item"><div class="service-line"><span class="service-no">05</span><h3>Visual Direction & 3D Furniture Concepts</h3><span class="service-more">+</span></div><p class="service-desc">Creative direction, campaign assets, custom interior visualization, 3D furniture concepts, client consultation, and production storytelling.</p></article>
+          <article class="service-item"><div class="service-line"><span class="service-no">06</span><h3>Professional MC & Voice Over</h3><span class="service-more">+</span></div><p class="service-desc">Corporate hosting, livestream flow, campaign narration, commercial VO, festive greetings, event rundown delivery, and audience engagement.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="proof">
+      <div class="shell proof-grid">
+        <div class="quote-box reveal">
+          <div><span class="mini">Hiring me feels like</span><h2>real work, real spark.</h2></div>
+          <p>Strategy has to be sharp. Creative has to have taste. Execution has to survive the chaos. I like the messy middle where brands, numbers, people, and deadlines all become one coherent engine.</p>
+          <a class="btn primary" href="#contact">Build with me</a>
+        </div>
+        <div class="proof-cards reveal">
+          <button class="proof-card" data-fill="I need help with growth strategy and paid media."><h3>01 Growth mind</h3><p>Performance logic, audience behavior, and campaign systems that are built to move metrics.</p><span>Use this angle →</span></button>
+          <button class="proof-card" data-fill="I need help shaping brand storytelling and launch communication."><h3>02 Creative direction</h3><p>Visual communication background with enough business pressure to make the work useful.</p><span>Use this angle →</span></button>
+          <button class="proof-card" data-fill="I need help with events, partnerships, or multi-city activation."><h3>03 Activation energy</h3><p>Comfortable bridging digital dashboards, media partners, social momentum, and on-ground execution.</p><span>Use this angle →</span></button>
+          <button class="proof-card" data-fill="I need a marketer who can translate data into stakeholder-ready narratives."><h3>04 Data storyteller</h3><p>Reporting that does more than describe numbers — it clarifies decisions.</p><span>Use this angle →</span></button>
+          <button class="proof-card" data-fill="I need help with CRM, content pillars, and social ecosystem strategy."><h3>05 Human content</h3><p>Product education that feels simple, credible, interactive, and audience-aware.</p><span>Use this angle →</span></button>
+          <button class="proof-card" data-fill="I need a strong communicator for hosting, VO, or live brand moments."><h3>06 Stage presence</h3><p>Voice, rhythm, audience sensitivity, and professional energy for live or recorded formats.</p><span>Use this angle →</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-lab section-pad" aria-label="Creative visual work">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-title"><span class="mini">Visual Lab</span><h2>Because taste matters.</h2></div>
+          <p class="section-intro">A glimpse of the creative side: personal visuals, furniture renderings, campaign moments, and the warm jewel-tone system behind this prototype.</p>
+        </div>
+        <div class="visual-grid reveal">
+          <article class="visual-card large"><img src="assets/kitchen_warm.webp" alt="Warm modern kitchen concept" /></article>
+          <article class="visual-card side"><img src="assets/portrait_lailani.webp" alt="Portrait of Lailani Zhulmi" /></article>
+          <article class="visual-card small"><img src="assets/kitchen_sketch.webp" alt="Kitchen sketch concept" /></article>
+          <article class="visual-card small"><img src="assets/kitchen_white.webp" alt="Modern white kitchen concept" /></article>
+          <article class="visual-card small"><div class="visual-caption"><h3>Color system</h3><p>Warm canvas, organic dark typography, editorial burgundy, deep green accents, and structural moss lines.</p><a class="btn ghost" style="margin-top:16px;color:var(--canvas);border-color:rgba(245,238,228,.35)" href="#contact">Use this vibe</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="presence section-pad" aria-label="External links">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div class="section-title"><span class="mini">External Presence</span><h2>Find me in the wild.</h2></div>
+          <p class="section-intro">Every card opens in a new tab. For recruiters and collaborators, LinkedIn + CV give the professional snapshot; the portfolio and Instagram accounts show the ecosystem.</p>
+        </div>
+        <div class="link-board reveal">
+          <a class="link-card" href="https://www.linkedin.com/in/lailanizhulmi/" target="_blank" rel="noopener"><span>Profile</span><b>LinkedIn</b></a>
+          <a class="link-card" href="https://lailanizhulmi94.wixsite.com/personal-portfolio-w" target="_blank" rel="noopener"><span>Current Site</span><b>Wix Portfolio</b></a>
+          <a class="link-card" href="https://www.instagram.com/lailanizhulmi/" target="_blank" rel="noopener"><span>Personal</span><b>@lailanizhulmi</b></a>
+          <a class="link-card" href="https://www.instagram.com/dara.kitchenset/" target="_blank" rel="noopener"><span>Business</span><b>@dara.kitchenset</b></a>
+          <a class="link-card" href="https://www.instagram.com/sampoerna.mobilebanking/" target="_blank" rel="noopener"><span>Brand Work</span><b>@sampoerna.mobilebanking</b></a>
+          <a class="link-card" href="https://www.instagram.com/sampoerna.fest/" target="_blank" rel="noopener"><span>Event Work</span><b>@sampoerna.fest</b></a>
+          <a class="link-card" href="https://sampoernamobile.banksampoerna.com/" target="_blank" rel="noopener"><span>Product</span><b>Sampoerna Mobile</b></a>
+          <a class="link-card" href="https://sampoernafest.com/" target="_blank" rel="noopener"><span>Festival</span><b>SampoernaFest</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contact">
+      <div class="shell contact-grid">
+        <div class="reveal">
+          <span class="mini">Let's build something worth talking about</span>
+          <h2>Got a bold brief?</h2>
+          <p style="line-height:1.7;color:rgba(245,238,228,.76);max-width:560px">Open to growth marketing roles, brand/product marketing, performance strategy, event activation, creative direction, consulting, MC/voice-over work, and collaborations that need both taste and traction.</p>
+          <div class="contact-list">
+            <a class="contact-row" href="mailto:lailanizhulmi94@gmail.com"><b>Email</b><span>lailanizhulmi94@gmail.com</span></a>
+            <a class="contact-row" href="tel:+6281315114491"><b>Phone</b><span>+62 813-1511-4491</span></a>
+            <a class="contact-row" href="https://www.linkedin.com/in/lailanizhulmi/" target="_blank" rel="noopener"><b>LinkedIn</b><span>/in/lailanizhulmi</span></a>
+            <a class="contact-row" href="assets/Lailani_Zhulmi_CV_2026.pdf" download><b>CV</b><span>Download PDF</span></a>
+          </div>
+        </div>
+        <form class="form-card reveal" id="contactForm">
+          <div class="field"><label for="name">Your name</label><input id="name" name="name" placeholder="Who should I call you?" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" placeholder="name@company.com" required></div>
+          <div class="field"><label for="brief">What do you need?</label><select id="brief" name="brief"><option>Hiring / Career Opportunity</option><option>Growth Marketing Project</option><option>Brand Campaign / Launch</option><option>Event / MC / Voice Over</option><option>Dara Kitchen Set / 3D Interior</option><option>Other Collaboration</option></select></div>
+          <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me about the goal, timeline, and what success looks like."></textarea></div>
+          <div class="form-actions"><button class="btn primary" type="submit">Send email draft</button><button class="btn ghost" type="button" id="copyEmail">Copy email</button></div>
+          <p id="formNote" style="margin:16px 0 0;color:rgba(245,238,228,.68);font-size:.9rem">This prototype uses a mailto action, so it will open your email app with the message pre-filled.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell foot">
+      <span>© 2026 Lailani Zhulmi. Built as a bold, responsive portfolio prototype.</span>
+      <div class="foot-links"><a href="#home">Top</a><a href="#work">Work</a><a href="assets/Lailani_Zhulmi_CV_2026.pdf" download>CV</a><a href="mailto:lailanizhulmi94@gmail.com">Email</a></div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-hero"><img id="modalImage" src="" alt=""></div>
+      <div class="modal-body">
+        <div class="modal-top"><h2 id="modalTitle"></h2><button class="close-modal" id="closeModal" aria-label="Close case study">×</button></div>
+        <div class="modal-grid">
+          <div class="modal-list" id="modalFacts"></div>
+          <div class="modal-copy" id="modalCopy"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const projects = {
+      smb: {
+        title: 'Sampoerna Mobile Banking',
+        image: 'assets/event_microphone.webp',
+        facts: [
+          ['Period', '2021 – Present'], ['Role', 'Digital Marketing & Brand Communication Lead'], ['Objective', 'Position Sampoerna Mobile Banking as a trusted, approachable, growth-ready digital banking product.'], ['Channels', 'Google Ads, Meta Ads, TikTok Ads, Mailchimp, Instagram, website, push notification, WhatsApp Business, email blast, dashboards']
+        ],
+        copy: `<p><strong>Challenge:</strong> Digital banking is not just a product problem — it is a trust problem. The work had to make a financial product feel simple, credible, and desirable while managing regulatory sensitivity, acquisition targets, and user confidence.</p><p><strong>What I did:</strong> Led digital communication direction from campaign concepting and product storytelling to acquisition support, CRM communication, performance monitoring, UI/UX direction support, launch moments, media/influencer/merchant collaboration, and team workflow development.</p><ul><li>Generated 96K+ app installs in 2025 and 39K+ YTD 2026.</li><li>Delivered efficient paid acquisition with Rp3,099 CPI.</li><li>Supported 1.5M+ Google Ads clicks, 19M+ paid impressions, product education, and user acquisition momentum.</li></ul>`
+      },
+      fest: {
+        title: 'SampoernaFest', image: 'assets/festival_stage.webp',
+        facts: [['Period','2023 – Present'], ['Role','Digital Activation Manager — Multi-City Growth Campaign'], ['Objective','Transform Sultan Dadakan from a reward-based campaign into a larger ticketed brand festival.'], ['Cities','Surabaya, Pekanbaru, Pontianak, Samarinda, Makassar, Medan, Palembang']],
+        copy: `<p><strong>Challenge:</strong> The campaign had to shift audience perception from a free reward program into a paid festival experience with bigger lineups, commercial goals, and city-specific audience behavior.</p><p><strong>What I did:</strong> Managed digital activation across cities, shaped audience education, ticketing communication, campaign messaging, digital amplification, media partner coordination, performance monitoring, and content momentum before, during, and after each city.</p><ul><li>Helped drive 70% of total ticket sales through digital channels.</li><li>Contributed to 19.5M festival content views and 205.6K Instagram content interactions.</li><li>Supported 57.8K Instagram link clicks and 178K+ first-time microsite visitors.</li></ul>`
+      },
+      social: {
+        title: 'Sampoerna Mobile Banking Social Ecosystem', image: 'assets/corporate_room.webp',
+        facts: [['Period','2021 – Present'], ['Role','Social Media Strategy & Content Ecosystem Lead'], ['Objective','Build social trust, product education, engagement, and campaign amplification.'], ['Tools','Instagram, TikTok, Reels, campaign content, quizzes, testimonials, collaboration posts, analytics']],
+        copy: `<p><strong>Challenge:</strong> Financial content can easily become formal, repetitive, and difficult to engage with. The communication needed to feel human without losing accuracy, compliance, or credibility.</p><p><strong>What I did:</strong> Managed the brand’s public-facing social presence with lean-budget, high-impact formats: content pillars, quizzes, testimonials, collaboration posts, educational storytelling, and campaign mechanics.</p><ul><li>Built and maintained a 56K+ follower Instagram ecosystem.</li><li>Drove up to 200K clicks per month and around 50K page views per month.</li><li>Used social proof and product education to support broader acquisition campaigns.</li></ul>`
+      },
+      dara: {
+        title: 'Dara Kitchen Set', image: 'assets/kitchen_render.webp',
+        facts: [['Period','2020 – Present'], ['Role','Creative Business & 3D Visualization Lead'], ['Objective','Turn client needs and room measurements into clear 3D concepts before production.'], ['Channels','Instagram, Meta Ads, WhatsApp Business, client survey, 3D design tools, production coordination']],
+        copy: `<p><strong>Challenge:</strong> Custom furniture is where imagination meets reality. The work needs to balance aesthetics, function, materials, budget, feasibility, client expectations, and delivery quality.</p><p><strong>What I did:</strong> Followed up leads, conducted visits and space surveys, created 3D furniture concepts, presented design for approval, coordinated pricing, monitored production, ensured delivery quality, collected testimonials, and turned finished projects into content.</p><ul><li>Helped generate approximately 3–5 custom furniture buyers per month.</li><li>Supported smoother approvals through realistic 3D concepts.</li><li>Maintained strong client satisfaction through design clarity and production documentation.</li></ul>`
+      },
+      voice: {
+        title: 'Voice, Presence & Live Storytelling', image: 'assets/event_stage.webp',
+        facts: [['Period','2018 – Present'], ['Role','Professional MC & Voice Over Talent'], ['Objective','Deliver messages with clarity, warmth, confidence, and professional energy.'], ['Formats','Corporate events, livestreams, webinars, brand videos, radio content, after movies, promo guides']],
+        copy: `<p><strong>Challenge:</strong> Voice and stage work is not just speaking well. Each project needs rhythm, tone, timing, audience sensitivity, brand understanding, and composure when live situations change.</p><p><strong>What I did:</strong> Hosted corporate events, launches, webinars, festivals, community events, lucky draws, livestream talk shows, pre-event activations, and executive gatherings. Delivered VO for brand videos, commercial materials, festive campaigns, radio, audio guides, after movies, and digital content.</p><ul><li>Selected VO work includes Happy Fit, CIMB Radio, SMB, SampoernaFest Opening, Loket BSS Audio, Luxcrime, and SMB festive campaigns.</li><li>Hosted recurring and high-stakes formats including lucky draw events, livestream talk shows, pre-events, and leadership conferences.</li></ul>`
+      }
+    };
+
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      menuToggle.textContent = isOpen ? 'Close' : 'Menu';
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open'); menuToggle.setAttribute('aria-expanded','false'); menuToggle.textContent='Menu';
+    }));
+
+    document.querySelectorAll('.service-item').forEach(item => item.addEventListener('click', () => item.classList.toggle('open')));
+
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.work-card');
+    chips.forEach(chip => chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active')); chip.classList.add('active');
+      const filter = chip.dataset.filter;
+      cards.forEach(card => { card.style.display = filter === 'all' || card.dataset.category === filter ? '' : 'none'; });
+    }));
+
+    const backdrop = document.getElementById('modalBackdrop');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalFacts = document.getElementById('modalFacts');
+    const modalCopy = document.getElementById('modalCopy');
+    const closeModal = document.getElementById('closeModal');
+    function openProject(key){
+      const p = projects[key]; if(!p) return;
+      modalTitle.textContent = p.title; modalImage.src = p.image; modalImage.alt = p.title;
+      modalFacts.innerHTML = p.facts.map(([k,v]) => `<div><b>${k}</b><span>${v}</span></div>`).join('');
+      modalCopy.innerHTML = p.copy; backdrop.classList.add('show'); backdrop.setAttribute('aria-hidden','false'); closeModal.focus();
+    }
+    document.querySelectorAll('[data-project], [data-open]').forEach(el => el.addEventListener('click', (e) => {
+      const key = el.dataset.open || el.dataset.project;
+      if(e.target.closest('a')) return;
+      openProject(key);
+    }));
+    closeModal.addEventListener('click', () => { backdrop.classList.remove('show'); backdrop.setAttribute('aria-hidden','true'); });
+    backdrop.addEventListener('click', e => { if(e.target === backdrop) closeModal.click(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape' && backdrop.classList.contains('show')) closeModal.click(); });
+
+    document.querySelectorAll('.proof-card').forEach(card => card.addEventListener('click', () => {
+      document.getElementById('message').value = card.dataset.fill;
+      document.getElementById('brief').value = card.dataset.fill.includes('event') || card.dataset.fill.includes('communicator') ? 'Event / MC / Voice Over' : 'Growth Marketing Project';
+      document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+    }));
+
+    document.getElementById('copyEmail').addEventListener('click', async () => {
+      await navigator.clipboard.writeText('lailanizhulmi94@gmail.com');
+      document.getElementById('formNote').textContent = 'Email copied: lailanizhulmi94@gmail.com';
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const brief = encodeURIComponent(document.getElementById('brief').value);
+      const message = encodeURIComponent(document.getElementById('message').value.trim());
+      const body = `Hi Lailani,%0D%0A%0D%0AName: ${name}%0D%0AEmail: ${email}%0D%0ABrief: ${brief}%0D%0A%0D%0AMessage:%0D%0A${message}%0D%0A%0D%0AThanks!`;
+      window.location.href = `mailto:lailanizhulmi94@gmail.com?subject=${brief}%20via%20Portfolio&body=${body}`;
+    });
+
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if(entry.isIntersecting){ entry.target.classList.add('in'); observer.unobserve(entry.target); }
+    }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
